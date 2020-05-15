@@ -29,5 +29,5 @@
     "monitor_port": "int",
     "gatetime": "int"
   },
-  "image": "SuchtigIT/hassio-addon-autossh-{arch}"
+  "image": "suchtigit/hassio-addon-autossh-{arch}"
 }
