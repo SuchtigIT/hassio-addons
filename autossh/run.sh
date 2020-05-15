@@ -54,5 +54,11 @@ command_args="${command_args} ${OTHER_SSH_OPTIONS}"
 echo "[INFO] AUTOSSH_GATETIME=$AUTOSSH_GATETIME"
 echo "[INFO] command args: ${command_args}"
 
+echo "[PING] Warte auf gultigen Ping"
+
+#Wait for Ping before Starting
+until ping -c1 $HOSTNAME >/dev/null 2>&1; do :; done
+echo "[PING] Erfolgreich, starte AutoSSH"
+
 # Start autossh
 /usr/bin/autossh ${command_args}
